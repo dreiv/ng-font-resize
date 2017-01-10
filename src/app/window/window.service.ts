@@ -4,7 +4,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 const CHECK_DELAY = 250;
 
 @Injectable()
-export class WindowResizeService {
+export class WindowService {
   width$: Observable<number>;
 
   constructor() {
