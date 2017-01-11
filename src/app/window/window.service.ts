@@ -12,7 +12,7 @@ export class WindowService {
     this.width$ = (windowSize$.pluck('width') as Observable<number>).distinctUntilChanged();
 
     Observable.fromEvent(window, 'resize')
-      .throttleTime(CHECK_DELAY)
+      .debounceTime(CHECK_DELAY)
       .map(getWindowWidth)
       .subscribe(windowSize$);
   }
